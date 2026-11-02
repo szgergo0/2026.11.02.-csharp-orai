@@ -27,4 +27,72 @@ int fibo(int n)
 }
 Console.WriteLine(fibo(10));
 
+
+// 6
+int jelszo_erosseg(string jelszo)
+{
+    int erosseg = 1;
+    if (jelszo.Length >= 5)
+    {
+        erosseg += 1;
+    }
+    if (jelszo.Length >= 8)
+    {
+        erosseg += 2;
+    }
+    foreach (char a in jelszo)
+    {
+        if (a== '-')
+        {
+            erosseg += 2;
+        }
+        if (a == '_')
+        {
+            erosseg += 2;
+        }
+        if (a == '.')
+        {
+            erosseg += 2;
+        }
+
+    }
+    if (jelszo.Contains("123"))
+    {
+        erosseg = 0;
+    }
+    if (jelszo.Contains("jelszo"))
+    {
+        erosseg = 0;
+    }
+    if (jelszo.Length == 0)
+    {
+        erosseg = 0;
+    }
+    return erosseg;
+}
+Console.WriteLine(jelszo_erosseg("hazi_macska_4_life"));
+
+
+//7 
+
+string maganhangzot_torol(string szoveg)
+{
+    string maganhangzok = "aeiou";
+    string rendesszov = "";
+    foreach (char a in szoveg)
+    {
+        if (maganhangzok.Contains(char.ToLower(a)))
+        {
+            continue;
+        }
+        else {
+            rendesszov += a;
+        }
+    }
+    return rendesszov;
+}
+Console.WriteLine(maganhangzot_torol("Iden Java szigeten voltunk nyaralni. Nem is tudtam, hogy elneveztek egy helyet egy programozasi nyelvrol."));
+
+
+
 ```
