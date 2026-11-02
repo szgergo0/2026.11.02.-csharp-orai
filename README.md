@@ -1,5 +1,5 @@
 # 2026.11.02.-csharp-orai
-orai csharp
+Órai csharp feladatok: Abs_max; Fibonacci
 ```c#
 //1 Abs Max
 int abs_max(int a, int b)
