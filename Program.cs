@@ -1,25 +1,92 @@
-﻿//1
-int abs_max(int a, int b)
-{
-    a = Math.Abs(a);
-    b = Math.Abs(b);
-    return Math.Max(a, b);
-}
-Console.WriteLine(abs_max(12, -15));
+﻿////1
+//int abs_max(int a, int b)
+//{
+//    a = Math.Abs(a);
+//    b = Math.Abs(b);
+//    return Math.Max(a, b);
+//}
+//Console.WriteLine(abs_max(12, -15));
 
 
-//2
-int fibo(int n)
+////2
+//int fibo(int n)
+//{
+//    if (n == 0) 
+//    {
+//        return 0;
+//    }
+//    if (n <= 2)
+//    { 
+//        return 1;
+//    }
+
+//    return fibo(n - 1) + fibo(n - 2);
+//}
+//Console.WriteLine(fibo(10));
+
+
+
+// 6
+int jelszo_erosseg(string jelszo)
 {
-    if (n == 0) 
+    int erosseg = 1;
+    if (jelszo.Length >= 5)
     {
-        return 0;
+        erosseg += 1;
     }
-    if (n <= 2)
-    { 
-        return 1;
+    if (jelszo.Length >= 8)
+    {
+        erosseg += 2;
     }
+    foreach (char a in jelszo)
+    {
+        if (a== '-')
+        {
+            erosseg += 2;
+        }
+        if (a == '_')
+        {
+            erosseg += 2;
+        }
+        if (a == '.')
+        {
+            erosseg += 2;
+        }
 
-    return fibo(n - 1) + fibo(n - 2);
+    }
+    if (jelszo.Contains("123"))
+    {
+        erosseg = 0;
+    }
+    if (jelszo.Contains("jelszo"))
+    {
+        erosseg = 0;
+    }
+    if (jelszo.Length == 0)
+    {
+        erosseg = 0;
+    }
+    return erosseg;
 }
-Console.WriteLine(fibo(42));
+Console.WriteLine(jelszo_erosseg("hazi_macska_4_life"));
+
+
+//7
+
+string maganhangzot_torol(string szoveg)
+{
+    string maganhangzok = "aeiou";
+    string rendesszov = "";
+    foreach (char a in szoveg)
+    {
+        if (maganhangzok.Contains(char.ToLower(a)))
+        {
+            continue;
+        }
+        else {
+            rendesszov += a;
+        }
+    }
+    return rendesszov;
+}
+Console.WriteLine(maganhangzot_torol("Iden Java szigeten voltunk nyaralni. Nem is tudtam, hogy elneveztek egy helyet egy programozasi nyelvrol."));
