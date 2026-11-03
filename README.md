@@ -93,6 +93,21 @@ string maganhangzot_torol(string szoveg)
 }
 Console.WriteLine(maganhangzot_torol("Iden Java szigeten voltunk nyaralni. Nem is tudtam, hogy elneveztek egy helyet egy programozasi nyelvrol."));
 
+//8 szoveg titkositas
 
+string kodol(string uzenet, int n, char c)
+{
+   string kimenet = "";
+   foreach (char i in uzenet)
+   {
+       kimenet += i;
+       for (int h=1; h<=n; h++)
+       {
+           kimenet += c;
+       }
+   }
+   return kimenet;
+}
+Console.WriteLine(kodol("Pizza delben?", 3, 'x'));
 
 ```
